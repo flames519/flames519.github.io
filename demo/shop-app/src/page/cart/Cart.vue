@@ -1,11 +1,3 @@
-### 01.Cart-header
-
-一只想用ts构建一个项目
-
-使用了ant组件为了更(bu)好(xiang)的(zi)看(ji)的(xie)样式
-
-
-```html
 <template>
   <div class="cart">
     <!-- 先写一个购物车 -->
@@ -23,7 +15,7 @@
         <!-- v-if 和 v-show 的区别-->
         <!--
           v-if 不符合条件的dom元素不会被挂载到页面
-          v-show 元素的显示手css属性 display: none 控制
+          v-show 元素的显示手css属性 display :none 控制
           所以 v-if 较 v-show  有较小的挂载消耗 有较大的切换消耗
         -->
         <!-- <a-button key="headleBtn" v-if="isEdit" @click.stop="isEdit=!isEdit">编辑</a-button> -->
@@ -34,15 +26,7 @@
   </div>
 </template>
 
-```
-
-oh~~~~ 
-
-别的不说，一个vue 文件里data 和 methods 隔着十万八千里，上下翻动太累了 
-
-```ts
-// lang = "ts"
-
+<script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 // ts 装饰器
@@ -57,4 +41,21 @@ export default class Cart extends Vue {
     return this.isEdit ? "编辑" : "完成";
   }
 }
-```
+</script>
+
+<style>
+.ant-page-header-heading-extra {
+  display: block;
+  float: right;
+  width: auto;
+  padding-top: 0px;
+}
+</style>
+
+<style scoped lang="scss">
+.cart {
+  .header {
+    border: 1px solid rgb(235, 237, 240);
+  }
+}
+</style>
