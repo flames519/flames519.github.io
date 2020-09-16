@@ -2,9 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import { Button, PageHeader } from "ant-design-vue";
+import filters from "./filters";
+import { Button, PageHeader, List, Spin } from "ant-design-vue";
 
-[Button, PageHeader].forEach((p) => Vue.use(p));
+[Button, PageHeader, List, Spin].forEach((p) => Vue.use(p));
+
+Vue.use(filters as any)
 
 Vue.config.productionTip = false;
 
