@@ -6,7 +6,6 @@
 如果没有，当我没说
 
 ```shell
-
     # 使用vueCli 创建一个demo
     npx vue create [project name]
     cd [project name]
