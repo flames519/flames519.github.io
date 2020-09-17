@@ -19,9 +19,9 @@ echo $txt
 
 # 合并vue 分支
 git checkout $branch books
-build book 
+
 gitbook build && rm -rf docs  && cp -r ./_book ./docs
 # git
 git add .
 git commit -am $txt
-# git push
+git push
