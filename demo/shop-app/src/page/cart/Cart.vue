@@ -80,7 +80,7 @@ export default class Cart extends Vue {
 
   // computer
   get isAll() {
-    return this.dataList.every((s) => s.isChecked);
+    return this.dataList.every((s) => !s.isDel && s.isChecked);
   }
 
   get totalPrice() {
