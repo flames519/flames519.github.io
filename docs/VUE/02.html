@@ -67,6 +67,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="03-1.html" />
+    
     
     <link rel="prev" href="01.html" />
     
@@ -150,6 +152,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.3" data-path="03-1.html">
+            
+                <a href="03-1.html">
+            
+                    
+                    03-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="03-2.html">
+            
+                <a href="03-2.html">
+            
+                    
+                    03-2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -206,7 +234,7 @@
 <p>&#x4F46;&#x51E1;&#x662F;&#x770B;&#x7740;&#x4E0D;&#x723D;&#x7684;&#xFF0C;&#x90A3;&#x5C31;&#x63D0;&#x7EC4;&#x4EF6;&#x5427;</p>
 <p>&#x5C31;&#x662F;&#x8FD9;&#x4E48;&#x8212;&#x670D;</p>
 <pre class="language-"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">cart-header</span> <span class="hljs-attr">:isEdit.sync</span>=<span class="hljs-string">&quot;isEdit&quot;</span> /&gt;</span>
-<span class="hljs-comment">&lt;!-- 
+<span class="hljs-comment">&lt;!--
     &#x7EC4;&#x4EF6;&#x95F4;&#x4F20;&#x503C;
     &#x7236;&#x7EC4;&#x4EF6; --- &gt; &#x5B50;&#x7EC4;&#x4EF6;
     :propName=&quot;&quot; @&#x65B9;&#x6CD5;=&quot;&quot;
@@ -228,26 +256,26 @@
   <span class="hljs-keyword">private</span> isEdit: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>;
 }
 </code></pre>
-<pre class="language-"><code class="lang-tsx">// CartHeader.tsx
-import { Component, Prop, Vue, Emit } from &quot;vue-property-decorator&quot;;
+<pre class="language-"><code class="lang-js"><span class="hljs-comment">// CartHeader.tsx</span>
+<span class="hljs-keyword">import</span> { Component, Prop, Vue, Emit } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
 
 @Component({
-  name: &quot;CartHeader&quot;,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;CartHeader&quot;</span>,
 })
-export default class CartHeader extends Vue {
-  // props
-  @Prop({ default: true }) isEdit!: boolean;
-  // computer
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CartHeader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
+  <span class="hljs-comment">// props</span>
+  @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-literal">true</span> }) isEdit!: boolean;
+  <span class="hljs-comment">// computer</span>
   private get headleBtn() {
-    return this.isEdit ? &quot;&#x7F16;&#x8F91;&quot; : &quot;&#x5B8C;&#x6210;&quot;;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEdit ? <span class="hljs-string">&quot;&#x7F16;&#x8F91;&quot;</span> : <span class="hljs-string">&quot;&#x5B8C;&#x6210;&quot;</span>;
   }
-  // $emit
-  @Emit(&quot;update:isEdit&quot;)
+  <span class="hljs-comment">// $emit</span>
+  @Emit(<span class="hljs-string">&quot;update:isEdit&quot;</span>)
   updateIsEdit() {
-    return !this.isEdit;
+    <span class="hljs-keyword">return</span> !<span class="hljs-keyword">this</span>.isEdit;
   }
   protected render() {
-    return (
+    <span class="hljs-keyword">return</span> (
       &lt;div class=&quot;cart&quot;&gt;
         &lt;a-page-header class=&quot;header&quot; title=&quot;&#x8D2D;&#x7269;&#x8F66;&quot; onBack={() =&gt; null}&gt;
           &lt;template slot=&quot;extra&quot;&gt;
@@ -288,10 +316,14 @@ export default class CartHeader extends Vue {
 
             
                 
-                <a href="01.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 01">
+                <a href="01.html" class="navigation navigation-prev " aria-label="Previous page: 01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="03-1.html" class="navigation navigation-next " aria-label="Next page: 03-1">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -300,7 +332,7 @@ export default class CartHeader extends Vue {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02","level":"1.2.2","depth":2,"previous":{"title":"01","level":"1.2.1","depth":2,"path":"VUE/01.md","ref":"VUE/01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE/02.md","mtime":"2020-09-16T05:55:17.740Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-16T11:00:06.537Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02","level":"1.2.2","depth":2,"next":{"title":"03-1","level":"1.2.3","depth":2,"path":"VUE/03-1.md","ref":"VUE/03-1.md","articles":[]},"previous":{"title":"01","level":"1.2.1","depth":2,"path":"VUE/01.md","ref":"VUE/01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE/02.md","mtime":"2020-09-17T08:02:15.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T08:02:15.943Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

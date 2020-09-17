@@ -1,0 +1,452 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>03-2 · 不自知</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="03-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    自述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="vue.html">
+            
+                <a href="vue.html">
+            
+                    
+                    VUE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01.html">
+            
+                <a href="01.html">
+            
+                    
+                    01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02.html">
+            
+                <a href="02.html">
+            
+                    
+                    02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-1.html">
+            
+                <a href="03-1.html">
+            
+                    
+                    03-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="03-2.html">
+            
+                <a href="03-2.html">
+            
+                    
+                    03-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >03-2</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="03cart-content">03.cart-content</h1>
+<h3 id="032">03.2</h3>
+<p>&#x592A;&#x957F; &#x5206;&#x4E00;&#x4E0B;</p>
+<p>script &#x90E8;&#x5206;</p>
+<p>&#x96BE;&#x53D7; &#x903B;&#x8F91;&#x5C45;&#x7136;&#x6CA1;&#x5206;&#x51FA;&#x53BB;</p>
+<pre class="language-"><code class="lang-js"><span class="hljs-comment">// cart.vue</span>
+<span class="hljs-keyword">import</span> { Component, Prop, Vue } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
+<span class="hljs-keyword">import</span> { filter } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue/types/umd&quot;</span>;
+<span class="hljs-keyword">import</span> CartHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../components/cart/CartHeader&quot;</span>;
+<span class="hljs-keyword">import</span> CartContent <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../components/cart/CartContent.vue&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;../../components/cart/CartTypes&quot;</span>;
+
+<span class="hljs-comment">// ts &#x88C5;&#x9970;&#x5668;</span>
+@Component({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Cart&quot;</span>,
+  <span class="hljs-attr">components</span>: { CartHeader, CartContent },
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cart</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
+  <span class="hljs-comment">// data</span>
+  private isEdit: boolean = <span class="hljs-literal">true</span>;
+  private dataList: Shop[] = [];
+  private goodsLoading: boolean = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-comment">// choose</span>
+  sTop(shop: Shop) {
+    <span class="hljs-keyword">let</span> bol: boolean = shop.isChecked;
+    shop.goods.forEach(<span class="hljs-function">(<span class="hljs-params">p</span>) =&gt;</span> (p.isChecked = bol));
+  }
+  pTos(shop: Shop) {
+    shop.isChecked = shop.goods.every(<span class="hljs-function">(<span class="hljs-params">g</span>) =&gt;</span> g.isChecked);
+  }
+  chooseGoods(goods: Goods, <span class="hljs-attr">shop</span>: Shop) {
+    <span class="hljs-keyword">let</span> bol = goods.isChecked;
+    goods.isChecked = !bol;
+    <span class="hljs-keyword">this</span>.pTos(shop);
+  }
+  chooseShop(shop: Shop, <span class="hljs-attr">bol</span>: boolean) {
+    shop.isChecked = !bol;
+    <span class="hljs-keyword">this</span>.sTop(shop);
+  }
+  chooseAll() {
+    <span class="hljs-keyword">let</span> bol = <span class="hljs-keyword">this</span>.isAll;
+    <span class="hljs-keyword">this</span>.dataList.forEach(<span class="hljs-function">(<span class="hljs-params">s</span>) =&gt;</span> {
+      <span class="hljs-keyword">this</span>.chooseShop(s, bol);
+    });
+  }
+
+  <span class="hljs-comment">// headle</span>
+  headle() {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.isEdit) {
+      <span class="hljs-comment">// del</span>
+      <span class="hljs-keyword">this</span>.dataList.forEach(<span class="hljs-function">(<span class="hljs-params">s</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (s.isChecked) {
+          s.isDel = <span class="hljs-literal">true</span>;
+          s.goods.forEach(<span class="hljs-function">(<span class="hljs-params">g</span>) =&gt;</span> (g.isDel = <span class="hljs-literal">true</span>));
+        } <span class="hljs-keyword">else</span> {
+          s.goods.forEach(<span class="hljs-function">(<span class="hljs-params">g</span>) =&gt;</span> (g.isDel = g.isChecked));
+        }
+      });
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// submit</span>
+    }
+  }
+
+  <span class="hljs-comment">// computer</span>
+  get isAll() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataList.every(<span class="hljs-function">(<span class="hljs-params">s</span>) =&gt;</span> s.isChecked);
+  }
+
+  get totalPrice() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataList.reduce(
+      <span class="hljs-function">(<span class="hljs-params">pre, p</span>) =&gt;</span>
+        pre +
+        p.goods.reduce(
+          <span class="hljs-function">(<span class="hljs-params">s, i</span>) =&gt;</span>
+            !i.isDel &amp;&amp; i.isChecked ? s + <span class="hljs-built_in">parseFloat</span>(i.price + <span class="hljs-string">&quot;&quot;</span>) * i.num : s,
+          <span class="hljs-number">0</span>
+        ),
+      <span class="hljs-number">0</span>
+    );
+  }
+
+  <span class="hljs-comment">// mounted</span>
+  public mounted() {
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;welcome Cart&quot;</span>);
+      <span class="hljs-keyword">this</span>.dataList = [
+        {
+          <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;&#x5546;&#x5E97;a&quot;</span>,
+          <span class="hljs-attr">goods</span>: [
+            { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;a1&quot;</span>, <span class="hljs-attr">price</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">num</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span> },
+            { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;a2&quot;</span>, <span class="hljs-attr">price</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">num</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span> },
+          ],
+          <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span>,
+        },
+        {
+          <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;&#x5546;&#x5E97;b&quot;</span>,
+          <span class="hljs-attr">goods</span>: [
+            { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;b1&quot;</span>, <span class="hljs-attr">price</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">num</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span> },
+            { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;b2&quot;</span>, <span class="hljs-attr">price</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">num</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span> },
+          ],
+          <span class="hljs-attr">isChecked</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">isDel</span>: <span class="hljs-literal">false</span>,
+        },
+      ];
+      <span class="hljs-keyword">this</span>.goodsLoading = <span class="hljs-literal">false</span>;
+    }, <span class="hljs-number">3000</span>);
+  }
+}
+
+<span class="hljs-comment">// CartContent.vue</span>
+
+<span class="hljs-keyword">import</span> { Component, Prop, Vue } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
+<span class="hljs-keyword">import</span> ShopItem <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./ShopItem.vue&quot;</span>;
+
+@Component({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;CartContent&quot;</span>,
+  <span class="hljs-attr">components</span>: { ShopItem },
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CartContent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
+  @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-literal">true</span> }) goodsLoading!: boolean;
+  @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> [] }) dataList!: Shop[];
+}
+
+<span class="hljs-comment">// ShopItem.vue</span>
+
+<span class="hljs-keyword">import</span> { Component, Emit, Prop, Vue } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
+
+@Component({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;ShopItem&quot;</span>,
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShopItem</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
+  <span class="hljs-comment">// props</span>
+  @Prop({<span class="hljs-attr">default</span>:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{}}) shop!:Shop
+  <span class="hljs-comment">// $emit</span>
+  @Emit(<span class="hljs-string">&quot;chooseGoods&quot;</span>)
+  chooseGoods(goods:Goods,<span class="hljs-attr">shop</span>:Shop){}
+  <span class="hljs-comment">// $emite ===&gt; this.$emist(&quot;choseShop&quot;)</span>
+  @Emit(<span class="hljs-string">&quot;chooseShop&quot;</span>)
+  chooseShop(shop:Shop,<span class="hljs-attr">bol</span>:boolean){}
+
+  mounted() {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.$attrs);
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.$listeners);
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 03-1">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"03-2","level":"1.2.4","depth":2,"previous":{"title":"03-1","level":"1.2.3","depth":2,"path":"VUE/03-1.md","ref":"VUE/03-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE/03-2.md","mtime":"2020-09-17T08:02:15.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T08:02:15.943Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
