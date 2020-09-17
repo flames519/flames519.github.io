@@ -4,7 +4,7 @@
 
 ## VUE
 
-* [vue](VUE/vue.md) 
+* [vue](VUE/vue.md)
 
 ### VUE-Cart
 
