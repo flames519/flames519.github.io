@@ -1,0 +1,35 @@
+.cart {
+    .ant-page-header-heading-extra {
+      display: block;
+      float: right;
+      width: auto;
+      padding-top: 0px;
+    }
+    .header {
+      border: 1px solid rgb(235, 237, 240);
+    }
+    .cur {
+      background-color: #f57;
+    }
+    .choose-p-btn,
+    .choose-g-btn {
+      position: absolute;
+      left: 29px;
+    }
+    .choose-p-btn {
+      top: 7px;
+    }
+    .content {
+      margin-bottom: 60px;
+    }
+    .total {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 60px;
+      background-color: rgb(235, 237, 240);
+    }
+  }

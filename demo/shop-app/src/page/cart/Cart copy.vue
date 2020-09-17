@@ -27,6 +27,47 @@
     <!-- header --end -->
     <cart-header :isEdit.sync="isEdit" />
 
+    <!-- content -->
+    <div class="content">
+      <a-spin size="large" :spinning="goodsLoading">
+        <div v-for="shop of dataList" :key="shop.name">
+          <a-list v-if="!shop.isDel" bordered item-layout="vertical" :data-source="shop.goods">
+            <div slot="header" style="position: relative;">
+              <a-button
+                shape="circle"
+                size="small"
+                @click="chooseShop(shop,shop.isChecked)"
+                class="choose-g-btn"
+                :class="{cur:shop.isChecked}"
+              ></a-button>
+              {{shop.name}}
+            </div>
+            <a-list-item slot="renderItem" slot-scope="goods">
+              <a-list-item-meta v-if="!goods.isDel">
+                <p slot="title">商品: {{ goods.title}}</p>
+                <div slot="description" style="position: relative;">
+                  <a-button
+                    shape="circle"
+                    size="small"
+                    @click="chooseGoods(goods,shop)"
+                    class="choose-p-btn"
+                    :class="{cur:goods.isChecked}"
+                  ></a-button>
+                  <p>价格：{{goods.price | priceF}}</p>
+                  <p>
+                    数量：
+                    <a-button shape="circle" size="small" @click="()=>goods.num>1&&goods.num--">－</a-button>
+                    <span style="margin:0 5px">{{goods.num}}</span>
+                    <a-button shape="circle" size="small" @click="()=>goods.num<9&&goods.num++">＋</a-button>
+                  </p>
+                </div>
+              </a-list-item-meta>
+            </a-list-item>
+          </a-list>
+        </div>
+      </a-spin>
+    </div>
+
   </div>
 </template>
 
