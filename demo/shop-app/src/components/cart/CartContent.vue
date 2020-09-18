@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <a-spin size="large" :spinning="goodsLoading">
-      <div v-for="shop of dataList" :key="shop.name">
+      <div v-for="shop of noDelDataList" :key="shop.name">
         <shop-item :shop="shop" v-on="$listeners" />
       </div>
     </a-spin>
@@ -19,6 +19,9 @@ import ShopItem from "./ShopItem.vue";
 export default class CartContent extends Vue {
   @Prop({ default: true }) goodsLoading!: boolean;
   @Prop({ default: () => [] }) dataList!: Shop[];
+  private get noDelDataList() {
+    return this.dataList.filter((shop) => !shop.isDel);
+  }
 }
 </script>
 

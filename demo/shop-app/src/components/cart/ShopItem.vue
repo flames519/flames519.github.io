@@ -1,5 +1,5 @@
 <template>
-  <a-list v-if="!shop.isDel" bordered item-layout="vertical" :data-source="shop.goods">
+  <a-list bordered item-layout="vertical" :data-source="noDelGoods">
     <!-- 商铺 -->
     <div slot="header" style="position: relative;">
       <a-button
@@ -14,7 +14,7 @@
 
     <!-- 商品 -->
     <a-list-item slot="renderItem" slot-scope="goods">
-      <a-list-item-meta v-if="!goods.isDel">
+      <a-list-item-meta>
         <p slot="title">商品: {{ goods.title}}</p>
         <div slot="description" style="position: relative;">
           <a-button
@@ -45,17 +45,23 @@ import { Component, Emit, Prop, Vue } from "vue-property-decorator";
 })
 export default class ShopItem extends Vue {
   // props
-  @Prop({default:()=>{}}) shop!:Shop
+  @Prop({ default: () => {} }) shop!: Shop;
+
+  // computer
+  private get noDelGoods() {
+    return this.shop.goods.filter((goods) => !goods.isDel);
+  }
+
   // $emit
   @Emit("chooseGoods")
-  chooseGoods(goods:Goods,shop:Shop){}
+  chooseGoods(goods: Goods, shop: Shop) {}
   // $emite ===> this.$emist("choseShop")
   @Emit("chooseShop")
-  chooseShop(shop:Shop,bol:boolean){}
+  chooseShop(shop: Shop, bol: boolean) {}
 
   mounted() {
-   console.log(this.$attrs);
-   console.log(this.$listeners); 
+    console.log(this.$attrs);
+    console.log(this.$listeners);
   }
 }
 </script>
