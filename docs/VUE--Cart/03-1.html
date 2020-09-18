@@ -259,13 +259,30 @@
 </li>
 </ul>
 </blockquote>
-<p>&#x6DF1;&#x5C42;&#x7EC4;&#x4EF6;&#x95F4;&#x4F20;&#x503C;</p>
+<p><strong><em> &#x6DF1;&#x5C42;&#x7EC4;&#x4EF6;&#x95F4;&#x4F20;&#x503C; </em></strong></p>
 <p>v-bind=&quot;$attrs&quot;</p>
 <p>v-on=&quot;$listeners</p>
 <p>&#x5C31;&#x662F;&#x7237;&#x7237;&#x7ED9;&#x540E;&#x4EE3;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x4E8B;&#x4EF6;&#x5168;&#x90E8;&#x7ED9;&#x7238;&#x7238;&#xFF0C;&#x7136;&#x540E;&#x7238;&#x7238;&#x6311;&#x51FA;&#x81EA;&#x5DF1;&#x7528;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x7528;&#x4E0D;&#x5230;&#x7684;&#x901A;&#x8FC7;$attrs,$listener&#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x4EE3;&#xFF0C;&#x4F18;&#x79C0;&#x4E86;</p>
 <p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x6CD5; provide / inject</p>
 <p>&#x8FD9;&#x5C31;&#x5389;&#x5BB3;&#x4E86;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x7684;&#x4F20;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x7237;&#x7237; ==&gt; provide &#x540E;&#x4EE3;&#x8C01;&#x9700;&#x8981;  ==&gt; inject</p>
 <p>provide &#x8FD0;&#x884C;&#x5728; &#x751F;&#x547D;&#x5468;&#x671F; created &#x4E4B;&#x524D;</p>
+<p><strong><em> &#x7EC6;&#x8282;&#xFF1A;=====&gt; v-if &amp;&amp; v-for </em></strong></p>
+<p>v-if &#x548C; v-for &#x4E0D;&#x80FD;&#x518D;&#x540C;&#x4E00;&#x884C;&#x4F7F;&#x7528;&#xFF0C;&#x8C01;&#x90FD;&#x77E5;&#x9053;</p>
+<p>why?</p>
+<p><strong><em> v-for &#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4; v-if &#x9AD8; ===&gt; &#x6E90;&#x7801;&#x5C31;&#x662F;&#x8FD9;&#x6478;&#x5199;&#x7684; </em></strong></p>
+<p>&#x6211;&#x8FD8;&#x80FD;&#x600E;&#x4E48;&#x770B;</p>
+<p>&#x4EE5;&#x540E;&#x518D;&#x8BF4;&#xFF0C;&#x5148;&#x770B;&#x770B;&#x600E;&#x4E48;&#x7528;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x5224;&#x65AD;&#x8981;&#x4E0D;&#x8981;&#x6E32;&#x67D3;&#x8FD9;&#x6B21;&#x5FAA;&#x73AF; &#x90A3;&#x8D85;&#x7EA7;&#x7B80;&#x5355;&#x4E86; &#x63D0;&#x4E00;&#x5C42; if &gt; for &#x89E3;&#x51B3;&#x95EE;&#x9898;</p>
+<p>&#x90A3;&#x5982;&#x679C;&#x662F;&#x5FAA;&#x73AF;&#x5185;&#x90E8;&#x5462;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x63A7;&#x5236;&#x5546;&#x54C1;&#x5220;&#x9664;&#x4F7F;&#x7528;&#x7684; isDel &#x7684;&#x5B57;&#x6BB5;</p>
+<p>&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x6211;&#x662F;&#x5426;&#x6E32;&#x67D3;&#x5546;&#x54C1; &#x4E0D;&#x662F;&#x5916;&#x90E8;&#x63A7;&#x5236; &#x800C;&#x662F;&#x5185;&#x90E8;&#x63A7;&#x5236;</p>
+<p>&#x597D;&#x7684;&#x5427; if - for &#x4E0D;&#x80FD;&#x653E;&#x540C;&#x4E00;&#x5C42; &#x5206;&#x5F00;&#x4E0D;&#x5C31;&#x597D;&#x4E86;&#x561B; for - if</p>
+<p>WFT !!!! </p>
+<p>&#x8FD9;&#x548C;&#x653E;&#x4E00;&#x8D77;&#x6709;&#x533A;&#x522B;&#x561B; ...... </p>
+<p>&#x90A3;&#x600E;&#x4E48;&#x529E; &#xFF01;&#xFF01; computer  &#x8FD8;&#x8BB0;&#x5F97;&#x8FD9;&#x8D27;&#x561B; </p>
+<p>&#x6709;&#x5565;&#x7528;&#xFF1F;   &#x518D;&#x52A0;&#x4E0A; Array.fifter() &#x5462;</p>
+<p>&#x4F18;&#x79C0;&#x4E86; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#x6CA1;&#x6709;&#x88AB;&#x5220;&#x9664;&#x7684;&#x5546;&#x54C1;  </p>
+<p>for ==&gt; &#x53EA;&#x5FAA;&#x73AF;&#x9700;&#x8981;&#x6CA1;&#x6709;&#x88AB;&#x5220;&#x9664;&#x7684;&#x5546;&#x54C1; </p>
+<p>ojbk &#x6539;&#x9020;&#x4E00;&#x4E0B;</p>
 <pre class="language-"><code class="lang-html"><span class="hljs-comment">&lt;!-- cart.vue --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cart&quot;</span>&gt;</span>
@@ -299,7 +316,8 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a-spin</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;large&quot;</span> <span class="hljs-attr">:spinning</span>=<span class="hljs-string">&quot;goodsLoading&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;shop of dataList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;shop.name&quot;</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;div v-for=&quot;shop of dataList&quot; :key=&quot;shop.name&quot;&gt; --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;shop of noDelDataList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;shop.name&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">shop-item</span> <span class="hljs-attr">:shop</span>=<span class="hljs-string">&quot;shop&quot;</span> <span class="hljs-attr">v-on</span>=<span class="hljs-string">&quot;$listeners&quot;</span> /&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">a-spin</span>&gt;</span>
@@ -310,7 +328,8 @@
 <span class="hljs-comment">&lt;!-- ShopItem.vue --&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a-list</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;!shop.isDel&quot;</span> <span class="hljs-attr">bordered</span> <span class="hljs-attr">item-layout</span>=<span class="hljs-string">&quot;vertical&quot;</span> <span class="hljs-attr">:data-source</span>=<span class="hljs-string">&quot;shop.goods&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &lt;a-list v-if=&quot;!shop.isDel&quot; bordered item-layout=&quot;vertical&quot; :data-source=&quot;shop.goods&quot;&gt; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a-list</span> <span class="hljs-attr">bordered</span> <span class="hljs-attr">item-layout</span>=<span class="hljs-string">&quot;vertical&quot;</span> <span class="hljs-attr">:data-source</span>=<span class="hljs-string">&quot;noDelGoods&quot;</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- &#x5546;&#x94FA; --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;position: relative;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span>
@@ -325,7 +344,8 @@
 
     <span class="hljs-comment">&lt;!-- &#x5546;&#x54C1; --&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a-list-item</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;renderItem&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;goods&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a-list-item-meta</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;!goods.isDel&quot;</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;a-list-item-meta v-if=&quot;!goods.isDel&quot;&gt; --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-list-item-meta</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>&#x5546;&#x54C1;: {{ goods.title}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;position: relative;&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span>
@@ -391,7 +411,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"03-1","level":"3.3","depth":1,"next":{"title":"03-2","level":"3.4","depth":1,"path":"VUE--Cart/03-2.md","ref":"VUE--Cart/03-2.md","articles":[]},"previous":{"title":"02","level":"3.2","depth":1,"path":"VUE--Cart/02.md","ref":"VUE--Cart/02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/03-1.md","mtime":"2020-09-17T08:54:04.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T08:54:04.845Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"03-1","level":"3.3","depth":1,"next":{"title":"03-2","level":"3.4","depth":1,"path":"VUE--Cart/03-2.md","ref":"VUE--Cart/03-2.md","articles":[]},"previous":{"title":"02","level":"3.2","depth":1,"path":"VUE--Cart/02.md","ref":"VUE--Cart/02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/03-1.md","mtime":"2020-09-18T09:47:38.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-18T09:47:39.677Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

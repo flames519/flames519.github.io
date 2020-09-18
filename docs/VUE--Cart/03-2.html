@@ -357,6 +357,11 @@
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CartContent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
   @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-literal">true</span> }) goodsLoading!: boolean;
   @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> [] }) dataList!: Shop[];
+
+  <span class="hljs-comment">// computer</span>
+  private get noDelDataList() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataList.filter(<span class="hljs-function">(<span class="hljs-params">shop</span>) =&gt;</span> !shop.isDel);
+  }
 }
 
 <span class="hljs-comment">// ShopItem.vue</span>
@@ -369,6 +374,13 @@
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShopItem</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
   <span class="hljs-comment">// props</span>
   @Prop({<span class="hljs-attr">default</span>:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{}}) shop!:Shop
+
+  <span class="hljs-comment">// computer</span>
+  private get noDelGoods() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.shop.goods.filter(<span class="hljs-function">(<span class="hljs-params">goods</span>) =&gt;</span> !goods.isDel);
+  }
+
+
   <span class="hljs-comment">// $emit</span>
   @Emit(<span class="hljs-string">&quot;chooseGoods&quot;</span>)
   chooseGoods(goods:Goods,<span class="hljs-attr">shop</span>:Shop){}
@@ -421,7 +433,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"03-2","level":"3.4","depth":1,"previous":{"title":"03-1","level":"3.3","depth":1,"path":"VUE--Cart/03-1.md","ref":"VUE--Cart/03-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/03-2.md","mtime":"2020-09-17T08:54:04.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-17T08:54:04.845Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"03-2","level":"3.4","depth":1,"previous":{"title":"03-1","level":"3.3","depth":1,"path":"VUE--Cart/03-1.md","ref":"VUE--Cart/03-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/03-2.md","mtime":"2020-09-18T09:47:38.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-18T09:47:39.677Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
