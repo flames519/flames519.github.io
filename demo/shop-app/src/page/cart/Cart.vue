@@ -24,7 +24,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { filter } from "vue/types/umd";
 import CartHeader from "../../components/cart/CartHeader";
 import CartContent from "../../components/cart/CartContent.vue";
-import "../../components/cart/CartTypes";
+import {cartApi} from "../../api";
 
 // ts 装饰器
 @Component({
@@ -95,33 +95,18 @@ export default class Cart extends Vue {
       0
     );
   }
-
+  async getList(){
+    const res = await cartApi.getList()
+    this.dataList = res.data
+    this.goodsLoading = false
+  }
   // mounted
   public mounted() {
-    setTimeout(() => {
-      console.log("welcome Cart");
-      this.dataList = [
-        {
-          name: "商店a",
-          goods: [
-            { title: "a1", price: 30, num: 1, isChecked: false, isDel: false },
-            { title: "a2", price: 10, num: 3, isChecked: true, isDel: false },
-          ],
-          isChecked: false,
-          isDel: false,
-        },
-        {
-          name: "商店b",
-          goods: [
-            { title: "b1", price: 30, num: 1, isChecked: true, isDel: false },
-            { title: "b2", price: 10, num: 3, isChecked: true, isDel: false },
-          ],
-          isChecked: true,
-          isDel: false,
-        },
-      ];
+    console.log("welcome Cart");
+    cartApi.getList().then((res) => {
+      this.dataList = res.data;
       this.goodsLoading = false;
-    }, 3000);
+    });
   }
 }
 </script>
