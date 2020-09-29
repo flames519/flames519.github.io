@@ -1,0 +1,1 @@
+export const a = "my name is xxx"
