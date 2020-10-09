@@ -37,8 +37,12 @@ services:
                 restart: always
                 ports:
                         - 6379:6379
-        # nginx:
-        #         image: nginx
-        #         restart: always
-        #         ports:
-        #                 - 8080:80
+        nginx:
+                image: nginx
+                restart: always
+                ports:
+                        - 8092:80
+                volumes:
+                        - ./nginx/conf.d/:/etc/nginx/conf.d
+                        - ./frontend/dist:/var/www/html/
+                        - ./static/:/static/

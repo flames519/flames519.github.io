@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-button @click="login">{{ btnName }}</a-button>
+    <a-button @click="handleLogin">{{ btnName }}</a-button>
   </div>
 </template>
 
@@ -16,8 +16,15 @@ export default class Login extends Vue {
   get btnName() {
     return this.isLogin ? "注销" : "登录";
   }
+  handleLogin() {
+    this.login();
+    if (!this.isLogin) return;
+    // console.log(this.$route);
+    // console.log(this.$router);
+    const path = this.$route.query.r as string;
+    path && this.$router.push(path);
+  }
 }
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

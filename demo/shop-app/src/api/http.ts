@@ -1,13 +1,19 @@
-import axios, { AxiosRequestConfig, AxiosResponse} from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const baseOptions:AxiosRequestConfig = {}
+// console.log(process.env.VUE_TEST_URL);
+
+// const baseURL = "http://101.200.60.73:3000"
+
+const baseOptions: AxiosRequestConfig = {
+  // baseURL
+};
 
 const http = axios.create(baseOptions);
 
 http.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     //拦截请求，做统一处理
-
+    config.url = "/api" + config.url;
     console.log("config:", config);
 
     return config;
@@ -31,13 +37,12 @@ http.interceptors.response.use(
 );
 
 /**
- * 
- * @param url 
- * @param options 
+ *
+ * @param url
+ * @param options
  * @return (params)=>http.get()
  *
  */
-
 
 export const httpGet = <A>(url: string, options?: AxiosRequestConfig) => (
   params?: {},

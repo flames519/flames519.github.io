@@ -1,12 +1,8 @@
-# 自述
+# 小记
 
-你好，我很好
 
-长大的过程 就是舍得的过程
 
-最难的过程不是取舍不定
 
-是计较已得与已失
 
 
 -----
@@ -21,7 +17,8 @@
 > npm config set prefix="D:\Data\nodejs\npm_global"
 > npm config set cache="D:\Data\nodejs\npm_cache"
 
-> 这曾经是很头疼的问题 node-sass 的安转问题 不过现在好像也不是什么问题了
+> 这曾经是很头疼的问题 node-sass 的安装问题
+> .npmc文件内配置也可以
 
 >npm config set sass_binary_site=https://npm.taobao.org/mirrors/node-sass
 

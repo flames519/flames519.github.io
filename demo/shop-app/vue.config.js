@@ -1,3 +1,5 @@
+// console.log("aaaa：  " , process.env.BASE_URL);
+// console.log(process.env.VUE_TEST_URL);
 module.exports = {
     devServer: {
         before(app) {
@@ -22,7 +24,7 @@ module.exports = {
                 },
             ];
             // app ==> exprss 服务器
-            app.get('/cart/list', (req, res) => {
+            app.get('/api/cart/list', (req, res) => {
                 setTimeout(() => { res.json(data) }, 1000)
             });
         }

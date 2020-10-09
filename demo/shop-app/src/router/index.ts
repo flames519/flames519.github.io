@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
     if (sessionStorage.getItem("isLogin") == "1") {
       next();
     } else {
-      next({ path: "/login" });
+      next({ path: "/login?r=" + to.path});
     }
   }
 });
