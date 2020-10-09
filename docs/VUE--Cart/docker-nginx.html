@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>02 · 不自知</title>
+        <title>docker-nginx部署到阿里云 · 不自知</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -67,10 +67,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="03-1.html" />
     
-    
-    <link rel="prev" href="01.html" />
+    <link rel="prev" href="../VUE/vue-axios.html" />
     
 
     </head>
@@ -152,7 +150,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="02.html">
+        <li class="chapter " data-level="3.2" data-path="02.html">
             
                 <a href="02.html">
             
@@ -204,7 +202,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.6" data-path="docker-nginx.html">
+        <li class="chapter active" data-level="3.6" data-path="docker-nginx.html">
             
                 <a href="docker-nginx.html">
             
@@ -247,7 +245,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >02</a>
+        <a href=".." >docker-nginx部署到阿里云</a>
     </h1>
 </div>
 
@@ -262,65 +260,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="02&#x7EC4;&#x4EF6;&#x5316;">02.&#x7EC4;&#x4EF6;&#x5316;</h1>
-<p>&#x7B80;&#x7B80;&#x5355;&#x5355;&#x7684;&#x4E00;&#x4E2A;&#x5934;&#x90E8;&#x7EC4;&#x4EF6;&#xFF0C;&#x5360;&#x4E86;&#x5F88;&#x591A;&#x884C;&#x6570;</p>
-<p>&#x770B;&#x7740;&#x76F8;&#x5F53;&#x4E0D;&#x75DB;&#x5FEB;</p>
-<p>&#x4F46;&#x51E1;&#x662F;&#x770B;&#x7740;&#x4E0D;&#x723D;&#x7684;&#xFF0C;&#x90A3;&#x5C31;&#x63D0;&#x7EC4;&#x4EF6;&#x5427;</p>
-<p>&#x5C31;&#x662F;&#x8FD9;&#x4E48;&#x8212;&#x670D;</p>
-<pre class="language-"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">cart-header</span> <span class="hljs-attr">:isEdit.sync</span>=<span class="hljs-string">&quot;isEdit&quot;</span> /&gt;</span>
-<span class="hljs-comment">&lt;!--
-    &#x7EC4;&#x4EF6;&#x95F4;&#x4F20;&#x503C;
-    &#x7236;&#x7EC4;&#x4EF6; --- &gt; &#x5B50;&#x7EC4;&#x4EF6;
-    :propName=&quot;&quot; @&#x65B9;&#x6CD5;=&quot;&quot;
-    &#x5B50;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528; prop &#x63A5;&#x6536; &#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7684;&#x53D8;&#x91CF; &#x4F7F;&#x7528;$emit &#x89E6;&#x53D1;&#x7236;&#x7EC4;&#x4EF6;&#x76D1;&#x542C;&#x7684;&#x4E8B;&#x4EF6;
-    :usEdit.sync --- &gt; &#x8BED;&#x6CD5;&#x7CD6; === :isEdit=&quot;isEdit&quot; @update:isEdit=&quot;val=&gt;isEdit=val&quot;
- --&gt;</span>
-</code></pre>
-<pre class="language-"><code class="lang-ts"><span class="hljs-comment">//cart.vue</span>
-<span class="hljs-keyword">import</span> { Component, Prop, Vue } from <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
-<span class="hljs-keyword">import</span> CartHeader from <span class="hljs-string">&quot;../../components/cart/CartHeader&quot;</span>
+                                <h1 id="docker-nginx-&#x90E8;&#x7F72;">docker-nginx &#x90E8;&#x7F72;</h1>
+<p>&#x9884;&#x89C8;&#x5730;&#x5740;:<a href="http://101.200.60.73:3000" target="_blank">http://101.200.60.73:3000</a></p>
+<pre class="language-"><code class="lang-js">  // docker-compose.yml
+  // &#x521B;&#x5EFA;nginx&#x955C;&#x50CF;
+  nginx:
+        image: nginx
+        restart: always
+        ports:
+                - 8092:80  // &#x5C06;80&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x5230;8092&#x7AEF;&#x53E3;
+        volumes: // &#x5C06;&#x6587;&#x4EF6;&#x6620;&#x5C04;&#x5230;&#x955C;&#x50CF;&#x4E2D;
+                - ./nginx/nginx.conf:/etc/nginx/nginx.conf // &#x914D;&#x7F6E;&#x6587;&#x4EF6; &#x4E3B;&#x8981;&#x4FEE;&#x529F; user &#x4E0E;&#x5F53;&#x524D;&#x7528;&#x6237;&#x5339;&#x914D;&#x89E3;&#x51B3;403&#x95EE;&#x9898;
+                - ./nginx/conf.d/:/etc/nginx/conf.d
+                - /root/www/cart/demo/shop-app/dist/:/root/www/test //
 
-<span class="hljs-comment">// ts &#x88C5;&#x9970;&#x5668;</span>
-@Component({
-  name: <span class="hljs-string">&quot;Cart&quot;</span>,
-  components:{CartHeader}
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> Cart extends Vue {
-  <span class="hljs-comment">// data</span>
-  <span class="hljs-keyword">private</span> isEdit: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span>;
-}
-</code></pre>
-<pre class="language-"><code class="lang-js"><span class="hljs-comment">// CartHeader.tsx</span>
-<span class="hljs-keyword">import</span> { Component, Prop, Vue, Emit } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-property-decorator&quot;</span>;
+// nginx/conf.d/docker.conf
+server {
+    listen 80;
 
-@Component({
-  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;CartHeader&quot;</span>,
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CartHeader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Vue</span> </span>{
-  <span class="hljs-comment">// props</span>
-  @Prop({ <span class="hljs-attr">default</span>: <span class="hljs-literal">true</span> }) isEdit!: boolean;
-  <span class="hljs-comment">// computer</span>
-  private get headleBtn() {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEdit ? <span class="hljs-string">&quot;&#x7F16;&#x8F91;&quot;</span> : <span class="hljs-string">&quot;&#x5B8C;&#x6210;&quot;</span>;
-  }
-  <span class="hljs-comment">// $emit</span>
-  @Emit(<span class="hljs-string">&quot;update:isEdit&quot;</span>)
-  updateIsEdit() {
-    <span class="hljs-keyword">return</span> !<span class="hljs-keyword">this</span>.isEdit;
-  }
-  protected render() {
-    <span class="hljs-keyword">return</span> (
-      &lt;div class=&quot;cart&quot;&gt;
-        &lt;a-page-header class=&quot;header&quot; title=&quot;&#x8D2D;&#x7269;&#x8F66;&quot; onBack={() =&gt; null}&gt;
-          &lt;template slot=&quot;extra&quot;&gt;
-            &lt;a-button key=&quot;headleBtn&quot; onClick={() =&gt; this.updateIsEdit()}&gt;
-              {this.headleBtn}
-            &lt;/a-button&gt;
-          &lt;/template&gt;
-        &lt;/a-page-header&gt;
-      &lt;/div&gt;
-    );
-  }
+    location / {
+        try_files $uri $uri/ /index.html; // &#x89E3;&#x51B3;vue-router histroy&#x6A21;&#x5F0F;&#x5237;&#x65B0;404&#x9519;&#x8BEF;
+        root /root/www/test/; //
+        index index.html index.htm;
+        autoindex  on;
+
+    // &#x53CD;&#x5411;&#x4EE3;&#x7406; &#x89E3;&#x51B3;&#x8DE8;&#x8D8A;&#x95EE;&#x9898;
+        location ^~/api {
+            rewrite ^/api/(.*)$ /$1 break; // &#x91CD;&#x5199;url
+            proxy_pass http://101.200.60.73:3000;
+        }
+    }
 }
 </code></pre>
 
@@ -350,14 +319,10 @@
 
             
                 
-                <a href="01.html" class="navigation navigation-prev " aria-label="Previous page: 01">
+                <a href="../VUE/vue-axios.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: axios">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="03-1.html" class="navigation navigation-next " aria-label="Next page: 03-1">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -366,7 +331,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02","level":"3.2","depth":1,"next":{"title":"03-1","level":"3.3","depth":1,"path":"VUE--Cart/03-1.md","ref":"VUE--Cart/03-1.md","articles":[]},"previous":{"title":"01","level":"3.1","depth":1,"path":"VUE--Cart/01.md","ref":"VUE--Cart/01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/02.md","mtime":"2020-10-08T06:33:05.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-09T07:31:07.826Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"docker-nginx部署到阿里云","level":"3.6","depth":1,"previous":{"title":"axios","level":"3.5","depth":1,"path":"VUE/vue-axios.md","ref":"VUE/vue-axios.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"VUE--Cart/docker-nginx.md","mtime":"2020-10-09T07:31:06.376Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-09T07:31:07.826Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
