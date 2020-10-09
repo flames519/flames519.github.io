@@ -1,0 +1,529 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>simple-webpack · 不自知</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../VUE--Cart/docker-nginx.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    自述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">VUE</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../VUE/vue.html">
+            
+                <a href="../VUE/vue.html">
+            
+                    
+                    vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">VUE-Cart</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../VUE--Cart/01.html">
+            
+                <a href="../VUE--Cart/01.html">
+            
+                    
+                    01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../VUE--Cart/02.html">
+            
+                <a href="../VUE--Cart/02.html">
+            
+                    
+                    02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../VUE--Cart/03-1.html">
+            
+                <a href="../VUE--Cart/03-1.html">
+            
+                    
+                    03-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../VUE--Cart/03-2.html">
+            
+                <a href="../VUE--Cart/03-2.html">
+            
+                    
+                    03-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../VUE/vue-axios.html">
+            
+                <a href="../VUE/vue-axios.html">
+            
+                    
+                    axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../VUE--Cart/docker-nginx.html">
+            
+                <a href="../VUE--Cart/docker-nginx.html">
+            
+                    
+                    docker-nginx部署到阿里云
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Webpack</li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="simple-webpack.html">
+            
+                <a href="simple-webpack.html">
+            
+                    
+                    simple-webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >simple-webpack</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="webpack">webpack</h1>
+<p>webpack &#x76EE;&#x524D;&#x4E3B;&#x6D41;&#x7684;&#x6253;&#x5305;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x7684;&#x61F5;&#x61F5;&#x61C2;&#x61C2;&#xFF0C;&#x7FFB;&#x7FFB;&#x6587;&#x6863;&#xFF0C;&#x4F7F;&#x7528;&#x662F;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;</p>
+<p>&#x81F3;&#x4E8E;&#x5185;&#x90E8;&#x5230;&#x5E95;&#x5982;&#x4F55;&#x8FD0;&#x884C;&#xFF0C;&#x5982;&#x4F55;&#x7EC4;&#x5408;&#xFF0C;&#x8FD8;&#x662F;&#x8981;&#x770B;&#x6E90;&#x7801;</p>
+<p>&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x5B9E;&#x73B0;&#x4E86; js &#x4EE3;&#x7801;&#x7684;&#x7EC4;&#x5408;</p>
+<pre class="language-"><code>&#x76EE;&#x5F55;&#x7ED3;&#x6784;
+| simple-webpack
+|--config &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5939;
+  -- webpack.config.js &#x914D;&#x7F6E;&#x9879;&#x76EE;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x548C;&#x51FA;&#x53E3;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x540D;
+|--src &#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;
+  --index.js &#x5165;&#x53E3;&#x6587;&#x4EF6;
+  |-- js &#x6A21;&#x5757;&#x6587;&#x4EF6;&#x5939;
+|--dist &#x51FA;&#x53E3;&#x6587;&#x4EF6;&#x5939;
+|--lib webpack &#x5B9E;&#x73B0;&#x76EE;&#x5F55;
+  --app.js &#x8FD0;&#x884C;webpack
+  --webpack.js
+</code></pre><pre class="language-"><code class="lang-js"><span class="hljs-comment">// config/webpack.confing.js</span>
+<span class="hljs-comment">// &#x53EA;&#x5B9E;&#x73B0;&#x4E86;js&#x76F8;&#x5173;&#x6587;&#x4EF6;</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">&quot;./src/index.js&quot;</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,
+    <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">&quot;../dist&quot;</span>),
+  },
+  <span class="hljs-comment">//</span>
+  mode: <span class="hljs-string">&quot;development&quot;</span>,
+};
+
+<span class="hljs-comment">// src/index.js</span>
+
+<span class="hljs-keyword">import</span> { a } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./js/a.js&quot;</span>;
+<span class="hljs-keyword">import</span> { b } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./js/b.js&quot;</span>;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`info: <span class="hljs-subst">${a}</span>,<span class="hljs-subst">${b}</span>`</span>);
+
+<span class="hljs-comment">// src/js/a.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-string">&quot;my name is xxx&quot;</span>
+
+<span class="hljs-comment">// src/js/b.js</span>
+<span class="hljs-keyword">import</span> { c } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./c.js&quot;</span>;
+<span class="hljs-built_in">console</span>.log(c);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> b = <span class="hljs-string">&quot;my code is good&quot;</span>;
+
+<span class="hljs-comment">// src/js/c.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> c = <span class="hljs-string">&quot;c&quot;</span>
+
+<span class="hljs-comment">// &#x76EE;&#x6807; &#x751F;&#x4EA7;&#x53EF;&#x8FD0;&#x884C;&#x7684;bundle.js&#x6587;&#x4EF6;</span>
+</code></pre>
+<p>&#x5F00;&#x59CB;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;</p>
+<pre class="language-"><code>&#x4F9D;&#x8D56;&#xFF1A; &#x4F7F;&#x7528;babel&#x76F8;&#x5173;&#x5DE5;&#x5177;&#x89E3;&#x6790;js&#x4EE3;&#x7801;
+// &#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x751F;&#x4EA7;ast @babel/parser
+// &#x8FC7;&#x6EE4;ast @babel/traverse
+// &#x89E3;&#x6790;&#x8F6C;&#x5316;&#x4EE3;&#x7801; @babel/core @babel/preset-env
+</code></pre><pre class="language-"><code class="lang-js"><span class="hljs-comment">// lib/webpack</span>
+
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x9879;&#x76EE;&#x8DEF;&#x5F84;</span>
+<span class="hljs-keyword">const</span> dirPath = path.dirname(__dirname);
+<span class="hljs-comment">// &#x89E3;&#x6790;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</span>
+<span class="hljs-keyword">const</span> parser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@babel/parser&quot;</span>);
+<span class="hljs-comment">// &#x8FC7;&#x6EE4;ast</span>
+<span class="hljs-keyword">const</span> traverse = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@babel/traverse&quot;</span>).default;
+<span class="hljs-comment">// &#x89E3;&#x6790;</span>
+<span class="hljs-keyword">const</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;@babel/core&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Webpack</span> </span>{
+  <span class="hljs-keyword">constructor</span>(option) {
+    <span class="hljs-keyword">this</span>.entry = option.entry;
+    <span class="hljs-keyword">this</span>.output = option.output;
+  }
+  run() {
+    <span class="hljs-comment">// console.log(this.code());</span>
+    <span class="hljs-keyword">const</span> code = <span class="hljs-keyword">this</span>.code(<span class="hljs-keyword">this</span>.entry)
+    <span class="hljs-keyword">const</span> { <span class="hljs-attr">path</span>: filepath, filename } = <span class="hljs-keyword">this</span>.output;
+    fs.writeFileSync(path.join(filepath, filename), code, <span class="hljs-string">&quot;utf-8&quot;</span>);
+  }
+  code(entry) {
+    <span class="hljs-keyword">const</span> graph = <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">this</span>.parse(entry));
+    <span class="hljs-comment">// console.log(this.parse(entry));</span>
+    <span class="hljs-comment">// console.log();</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`(function (graph) {
+      function require(module) {
+        eval(&quot;console.log(module)&quot;)
+        function localRequire(relativePath) {
+          return require(graph[module].dependencies[relativePath]);
+        }
+        var exports = {};
+        // eval(graph[module][&quot;code&quot;])
+        function fn(require, exports, code) {
+          eval(code);
+        }
+        fn(localRequire, exports, graph[module][&quot;code&quot;]);
+        return exports;
+      }
+      require(&quot;<span class="hljs-subst">${entry}</span>&quot;)
+    })(<span class="hljs-subst">${graph}</span>);`</span>;
+  }
+  parse(filename) {
+    <span class="hljs-keyword">const</span> graph = {};
+    <span class="hljs-keyword">const</span> content = fs.readFileSync(path.resolve(dirPath, filename), <span class="hljs-string">&quot;utf-8&quot;</span>);
+    <span class="hljs-comment">// console.log(content);</span>
+    <span class="hljs-comment">// sourceType: &quot;module&quot;</span>
+    <span class="hljs-comment">// &#x83B7;&#x53D6;ast</span>
+    <span class="hljs-keyword">const</span> ast = parser.parse(content, { <span class="hljs-attr">sourceType</span>: <span class="hljs-string">&quot;module&quot;</span> });
+    <span class="hljs-comment">// console.log(ast.program.body[0].source);</span>
+    <span class="hljs-comment">// &#x7B5B;&#x9009;ast&#xFF0C;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4E2D;&#x7684;&#x6A21;&#x5757;&#x76F8;&#x5173;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">const</span> dependencies = {};
+    traverse(ast, {
+
+      <span class="hljs-attr">ImportDeclaration</span>: <span class="hljs-function">(<span class="hljs-params">{ node }</span>) =&gt;</span> {
+        <span class="hljs-comment">// console.log(node);</span>
+        <span class="hljs-comment">// path.relative(from, to)</span>
+        <span class="hljs-comment">// &#x6C42;&#x51FA;&#x76F8;&#x5BF9;&#x6839;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;</span>
+        <span class="hljs-keyword">const</span> filePath = path.relative(
+          dirPath,
+          path.join(
+            path.resolve(dirPath, path.dirname(filename)),
+            node.source.value
+          )
+        );
+        dependencies[node.source.value] = filePath;
+      },
+    });
+    <span class="hljs-comment">// &#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x89E3;&#x6790;</span>
+    <span class="hljs-keyword">const</span> { code } = babel.transformFromAst(ast, <span class="hljs-literal">null</span>, {
+      <span class="hljs-attr">presets</span>: [<span class="hljs-string">&quot;@babel/preset-env&quot;</span>],
+    });
+
+    <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x548C;&#x5185;&#x5BB9;</span>
+    graph[filename] = {
+      dependencies,
+      code,
+    };
+
+    <span class="hljs-comment">// &#x9012;&#x5F52;</span>
+    <span class="hljs-built_in">Object</span>.keys(dependencies)
+      .map(<span class="hljs-function">(<span class="hljs-params">f</span>) =&gt;</span> <span class="hljs-keyword">this</span>.parse(dependencies[f]))
+      .forEach(<span class="hljs-function">(<span class="hljs-params">m</span>) =&gt;</span> <span class="hljs-built_in">Object</span>.assign(graph, m));
+
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;</span>
+    <span class="hljs-keyword">return</span> graph;
+  }
+};
+
+<span class="hljs-comment">// lib/app.js</span>
+<span class="hljs-keyword">const</span> Webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./webpack&quot;</span>);
+<span class="hljs-keyword">const</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;../config/webpack.config&quot;</span>);
+
+<span class="hljs-keyword">const</span> webpack = <span class="hljs-keyword">new</span> Webpack(config);
+webpack.run();
+
+<span class="hljs-comment">// &#x7ED3;&#x679C;</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">graph</span>) </span>{
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">require</span>(<span class="hljs-params">module</span>) </span>{
+        <span class="hljs-built_in">eval</span>(<span class="hljs-string">&quot;console.log(module)&quot;</span>)
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">localRequire</span>(<span class="hljs-params">relativePath</span>) </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>(graph[<span class="hljs-built_in">module</span>].dependencies[relativePath]);
+        }
+        <span class="hljs-keyword">var</span> exports = {};
+        <span class="hljs-comment">// eval(graph[module][&quot;code&quot;])</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">require, exports, code</span>) </span>{
+          <span class="hljs-built_in">eval</span>(code);
+        }
+        fn(localRequire, exports, graph[<span class="hljs-built_in">module</span>][<span class="hljs-string">&quot;code&quot;</span>]);
+        <span class="hljs-keyword">return</span> exports;
+      }
+      <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./src/index.js&quot;</span>)
+    })({<span class="hljs-string">&quot;./src/index.js&quot;</span>:{<span class="hljs-string">&quot;dependencies&quot;</span>:{<span class="hljs-string">&quot;./js/a.js&quot;</span>:<span class="hljs-string">&quot;src/js/a.js&quot;</span>,<span class="hljs-string">&quot;./js/b.js&quot;</span>:<span class="hljs-string">&quot;src/js/b.js&quot;</span>},<span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;\&quot;use strict\&quot;;\n\nvar _a = require(\&quot;./js/a.js\&quot;);\n\nvar _b = require(\&quot;./js/b.js\&quot;);\n\nconsole.log(\&quot;info: \&quot;.concat(_a.a, \&quot;,\&quot;).concat(_b.b));&quot;</span>},<span class="hljs-string">&quot;src/js/a.js&quot;</span>:{<span class="hljs-string">&quot;dependencies&quot;</span>:{},<span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;\&quot;use strict\&quot;;\n\nObject.defineProperty(exports, \&quot;__esModule\&quot;, {\n  value: true\n});\nexports.a = void 0;\nvar a = \&quot;my name is xxx\&quot;;\nexports.a = a;&quot;</span>},<span class="hljs-string">&quot;src/js/b.js&quot;</span>:{<span class="hljs-string">&quot;dependencies&quot;</span>:{<span class="hljs-string">&quot;./c.js&quot;</span>:<span class="hljs-string">&quot;src/js/c.js&quot;</span>},<span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;\&quot;use strict\&quot;;\n\nObject.defineProperty(exports, \&quot;__esModule\&quot;, {\n  value: true\n});\nexports.b = void 0;\n\nvar _c = require(\&quot;./c.js\&quot;);\n\nconsole.log(_c.c);\nvar b = \&quot;my code is good\&quot;;\nexports.b = b;&quot;</span>},<span class="hljs-string">&quot;src/js/c.js&quot;</span>:{<span class="hljs-string">&quot;dependencies&quot;</span>:{},<span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;\&quot;use strict\&quot;;\n\nObject.defineProperty(exports, \&quot;__esModule\&quot;, {\n  value: true\n});\nexports.c = void 0;\nvar c = \&quot;c\&quot;;\nexports.c = c;&quot;</span>}});
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../VUE--Cart/docker-nginx.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: docker-nginx部署到阿里云">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"simple-webpack","level":"4.1","depth":1,"previous":{"title":"docker-nginx部署到阿里云","level":"3.6","depth":1,"path":"VUE--Cart/docker-nginx.md","ref":"VUE--Cart/docker-nginx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","highlight","prism","search-pro","chapter-fold","splitter"],"root":"./books","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"highlight":{},"search-pro":{},"chapter-fold":{},"splitter":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"不自知","gitbook":"*"},"file":{"path":"Webpack/simple-webpack.md","mtime":"2020-10-09T07:39:29.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-09T07:42:11.698Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
